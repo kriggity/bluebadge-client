@@ -15,6 +15,7 @@ export default function Login(props) {
     const [passError, setPassError] = useState(null);
 
     useEffect(() => {
+        console.log(APIURL)
         if (firstRender.current) {
             firstRender.current = false
             return
