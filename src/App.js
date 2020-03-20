@@ -31,7 +31,7 @@ function App() {
     if (localStorage.getItem('userid') && localStorage.getItem('userid') !== 'undefined' && localStorage.getItem('userid') !== null) {
       setOwnerId(localStorage.getItem('userid'));
     }
-  })
+  },[])
 
   const updateToken = newToken => {
     localStorage.setItem('token', newToken);
