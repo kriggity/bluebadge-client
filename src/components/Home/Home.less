@@ -1,0 +1,33 @@
+@import "../../assets/fonts.css";
+
+@darkRed: rgb(24, 11, 11);
+
+.home {
+  .hero {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    a {
+      font-family: "Cinzel", serif;
+      margin: 0 0.75rem;
+      padding: 0.5em 1em;
+      background-color: bisque;
+      color: @darkRed;
+      border: 1px solid @darkRed;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: @darkRed;
+        color: bisque;
+      }
+      &,
+      &:hover,
+      &:focus {
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+      }
+    }
+  }
+}

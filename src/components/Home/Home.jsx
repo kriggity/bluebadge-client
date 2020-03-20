@@ -1,17 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'reactstrap';
 import "./Home.css";
-import GamesIndex from '../Games/GamesIndex';
+import BGA_CLIENT_ID from '../../helpers/bga_client_id';
+import GameCard from '../Games/GameCard';
 
 export default function Home(props) {
+    const [popGames, setPopGames] = useState([]);
+
+    const fetchPopGames = () => {
+        fetch(`https://www.boardgameatlas.com/api/search?client_id=${BGA_CLIENT_ID}&limit=12&order_by=popularity`, {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+            .then(res => res.json())
+            .then(gameData => {
+                setPopGames(gameData.games);
+            })
+            .catch(error => console.log('error', error));
+    }
+    useEffect(() => fetchPopGames(), []);
+
+    const GamesMapper = () => {
+        if (popGames.length !== 0) {
+            return popGames.map((game, index) => {
+                return (
+                    <Col sm='6' md='4' key={index}>
+                        <GameCard
+                            src={game.images.original}
+                            title={game.name}
+                            id={game.id}
+                        />
+                    </Col>
+                );
+            })
+        } else {
+            return (
+                <>
+                    <Col>
+                        <p>Apparently there are no popular games out right now.</p>
+                    </Col>
+                </>
+            );
+        }
+    }
+
     return (
-        <Container>
+        <Container className="home">
             <Row>
-                <Col>
-                    <h2>Home</h2>
-                    <GamesIndex view="search" />
-                    <GamesIndex ownerid={props.ownerid} token={props.token} view="owner" />
+                <Col className="text-center hero">
+                    <p>My Game Library is a virtual library of your real life games.</p>
+                    <Link to="/user/mygames">View My Games</Link>
+                    <Link to="/game/search">Search for Games</Link>
                 </Col>
+            </Row>
+            <Row>
+                <Col className="text-center">
+                    <h2>Popular Games of the Now</h2>
+                </Col>
+            </Row>
+            <Row className="results">
+                <GamesMapper />
             </Row>
         </Container>
     );

@@ -1,4 +1,82 @@
-.auth-container {
-    .loginToggle {
+@zeroSpread: {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+};
+@center-horz-vert: {
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+};
+body {
+  #root {
+    .App {
+      .auth-wrapper {
+        position: absolute;
+        @zeroSpread();
+        background-image: url("../../assets/wood-texture01.jpg");
+        z-index: 0;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,380000+100&0+0,1+100 */
+          background: -moz-radial-gradient(
+            center,
+            ellipse cover,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(56, 0, 0, 1) 100%
+          ); /* FF3.6-15 */
+          background: -webkit-radial-gradient(
+            center,
+            ellipse cover,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(56, 0, 0, 1) 100%
+          ); /* Chrome10-25,Safari5.1-6 */
+          background: radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(56, 0, 0, 1) 100%
+          ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#380000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+        .auth-container {
+          position: absolute;
+          z-index: 3;
+          width: 90%;
+          @media screen and (min-width: 400px) {
+            width: 330px;
+          }
+          @center-horz-vert();
+          background-image: url("../../assets/paper-tan.jpg");
+          background-size: 66%;
+          background-position: center;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+          padding: 1.5rem;
+          border-radius: 4px;
+          h2 {
+            margin-top: 0;
+            text-align: center;
+          }
+          form {
+            margin-bottom: 1.5rem;
+          }
+          .loginToggle {
+            text-align: center;
+          }
+        }
+      }
     }
+  }
 }

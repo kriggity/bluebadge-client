@@ -1,0 +1,16 @@
+@import "../../assets/fonts.css";
+.navbar {
+  background-color: #150303 !important;
+  font-family: "Cinzel", serif;
+}
+.navbar .navbar-nav .nav-item {
+  margin: 0 0.75rem;
+}
+.navbar .navbar-nav .nav-item a {
+  color: #fff;
+}
+@media screen and (min-width: 576px) {
+  .navbar .navbar-collapse {
+    justify-content: flex-end;
+  }
+}

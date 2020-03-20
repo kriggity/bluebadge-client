@@ -1,0 +1,50 @@
+.card {
+  padding: 1.5rem;
+  width: 100%;
+  background-image: url("../../assets/paper-tan.jpg");
+  background-size: 66%;
+  background-position: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    padding: 0.75rem;
+  }
+}
+.card .card-img {
+  width: 100%;
+  padding-top: 100%;
+  background-color: #fff;
+  background-size: auto 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.15);
+}
+.card .card-body {
+  margin-top: 1.5rem;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .card .card-body {
+    margin-top: 0.75rem;
+  }
+}
+.card .card-body .card-title {
+  margin-bottom: 0;
+}
+.card .card-body .card-title p {
+  margin-bottom: 2.25rem;
+}
+.card .card-body a {
+  position: absolute;
+  bottom: 0.75rem;
+}
+@media screen and (min-width: 576px) {
+  .card .card-body a {
+    bottom: 1.5rem;
+  }
+}

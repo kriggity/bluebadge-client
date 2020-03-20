@@ -3,11 +3,11 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
-    NavItem,
-    NavLink
+    NavItem
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
 
 export default function SiteBar(props) {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,25 +15,25 @@ export default function SiteBar(props) {
 
     return (
         <>
-            <Navbar color="light" light expand='md'>
-                <NavbarBrand href="/">Home/Brand</NavbarBrand>
+            <Navbar color="dark" dark expand='sm'>
+                <Link to="/" className="navbar-brand">My Game Library</Link>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <NavLink href="/user/mygames">My Games</NavLink>
-                        </NavItem>
-                        {/* <NavItem>
-                            <NavLink href="/user/myprofile">My Profile</NavLink>
-                        </NavItem> */}
-                        {/* <NavItem>
-                            <NavLink href="/user/myfriends">My Friends</NavLink>
-                        </NavItem> */}
-                        <NavItem>
-                            <NavLink href="/game/search">Search for Games</NavLink>
+                            <Link to="/user/mygames">My Games</Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/" onClick={props.clickLogout}>Log Out</NavLink>
+                            <Link to="/user/myaccount">My Account</Link>
+                        </NavItem>
+                        {/* <NavItem>
+                            <Link to="/user/myfriends">My Friends</Link>
+                        </NavItem> */}
+                        <NavItem>
+                            <Link to="/game/search">Search for Games</Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link to="/" onClick={props.clickLogout}>Log Out</Link>
                         </NavItem>
                     </Nav>
                 </Collapse>

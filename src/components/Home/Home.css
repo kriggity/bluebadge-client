@@ -1,0 +1,28 @@
+@import "../../assets/fonts.css";
+.home .hero {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.home .hero a {
+  font-family: "Cinzel", serif;
+  margin: 0 0.75rem;
+  padding: 0.5em 1em;
+  background-color: bisque;
+  color: #180b0b;
+  border: 1px solid #180b0b;
+}
+.home .hero a:hover,
+.home .hero a:focus {
+  text-decoration: none;
+  background-color: #180b0b;
+  color: bisque;
+}
+.home .hero a,
+.home .hero a:hover,
+.home .hero a:focus {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

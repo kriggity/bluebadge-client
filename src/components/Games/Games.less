@@ -1,6 +1,81 @@
+@import "../../assets/fonts.css";
+
 .gameProfile {
-  img {
-    width: 100%;
+  .card {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+
+    background-image: url("../../assets/paper-tan.jpg");
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+    background-size: 66%;
+    background-position: center;
+    &.hero {
+      .card-body {
+        text-align: center;
+        button {
+          margin-top:.75rem;
+        }
+      }
+    }
+
+    .img-wrapper {
+      margin: 1em;
+      margin-bottom: 0;
+      padding: 1em;
+      background-color: #fff;
+      border: 1px solid rgb(24, 11, 11);
+      .gameTitle {
+        text-align: center;
+        padding: 0.333em;
+        margin: -16px -16px 12px -16px;
+        background-color: rgb(24, 11, 11);
+        color: bisque;
+        text-shadow: none;
+      }
+
+      img {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+      
+    }
+
+    .card-body {
+      color: rgb(24, 11, 11);
+      margin-top: 0;
+      h3 {
+        margin-top: 0;
+        color: rgb(24, 11, 11);
+        text-shadow: none;
+      }
+      .comments {
+        q {
+          font-family: serif;
+          line-height: 1.2;
+          &::before,
+          &::after {
+            font-size: 1.666em;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            position: relative;
+            top: 4px;
+          }
+        }
+      }
+      dt {
+        text-transform: uppercase;
+        font-size: 0.75em;
+        letter-spacing: 0.07em;
+      }
+    }
+    &.gameComments,
+    &.gameDetails {
+      margin-top: 2em;
+    }
   }
 }
 .gameImg {

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Label, Input, Button, Container, Col, Row } from 'reactstrap';
+import React, { useState } from 'react';
+import { Form, FormGroup, Label, Input, Button, Container, Col, Row } from 'reactstrap';
 import GameCard from './GameCard';
+import BGA_CLIENT_ID from '../../helpers/bga_client_id';
+import './SearchGames.css';
 
 export default function SearchAPIGames(props) {
 
@@ -12,7 +14,12 @@ export default function SearchAPIGames(props) {
         setSearchResults([]);
 
         let tempStr = encodeURI(searchStr);
-        let fetchURL = `https://www.boardgameatlas.com/api/search?name=${tempStr}&client_id=clZBrtwxDp&fuzzy_match=true&limit=9`;
+        let searchLimit = 0;
+        let fetchURL = `https://www.boardgameatlas.com/api/search?name=${tempStr}&client_id=${BGA_CLIENT_ID}&fuzzy_match=true`;
+
+        if (searchLimit > 0) {
+            fetchURL = fetchURL + `&limit=${searchLimit}`;
+        }
 
         var requestOptions = {
             method: 'GET',
@@ -53,26 +60,31 @@ export default function SearchAPIGames(props) {
 
     return (
         <>
-            <Container>
+            <Container className="searchGames">
+                <Row>
+                    <Col className="text-center"><h1>Search Games</h1></Col>
+                </Row>
                 <Row>
                     <Col>
-                        <h3>Search Games</h3>
-                        <Form onSubmit={handleSubmit}>
-                            <Label htmlFor="search">Search by Name</Label>
-                            <Input
-                                name="search"
-                                value={searchStr}
-                                onChange={
-                                    e => {
-                                        setSearchStr(e.target.value)
+                        <Form inline onSubmit={handleSubmit}>
+                            <FormGroup>
+                                <Label hidden htmlFor="search">Search by Name</Label>
+                                <Input
+                                    name="search"
+                                    value={searchStr}
+                                    placeholder="search by name"
+                                    onChange={
+                                        e => {
+                                            setSearchStr(e.target.value)
+                                        }
                                     }
-                                }
-                            />
-                            <Button type="submit">Search</Button>
+                                />
+                                <Button type="submit">Search</Button>
+                            </FormGroup>
                         </Form>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="results">
                     {resultsMapper()}
                 </Row>
             </Container>

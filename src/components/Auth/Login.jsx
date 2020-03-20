@@ -66,7 +66,7 @@ export default function Login(props) {
     return (
         <>
             <h2>Login</h2>
-            <Form onSubmit={handleSubmit} noValidate>
+            <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email</Label>
                     <Input required name="email" type="email" value={email} onChange={e => setEmail(e.target.value)} />

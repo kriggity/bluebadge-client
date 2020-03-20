@@ -8,7 +8,9 @@ export default function Footer() {
             <Container fluid className="footer">
                 <Row>
                     <Col className="text-center">
-                        &copy; <a href="https://www.kriggity.com" rel='noreferrer noopener' target="_blank">kriggity.com</a> {new Date().getFullYear()}
+                        <p>
+                            &copy; {new Date().getFullYear()} <a href="https://www.kriggity.com" rel='noreferrer noopener' target="_blank">kriggity.com</a>
+                        </p>
                     </Col>
                 </Row>
             </Container>
