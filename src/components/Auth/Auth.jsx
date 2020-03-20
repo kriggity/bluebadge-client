@@ -12,6 +12,7 @@ export default function Auth(props) {
             <div className="auth-container">
                 <div className="outerwrapper">
                     <div className="innerwrapper">
+                        <h3 className="text-center">My Game Library</h3>
                         {showLogin ?
                             <Login updateToken={props.updateToken} />
                             : <Signup updateToken={props.updateToken} />

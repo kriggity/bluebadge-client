@@ -53,6 +53,13 @@ body #root .App .auth-wrapper .auth-container {
 body #root .App .auth-wrapper .auth-container h2 {
   margin-top: 0;
   text-align: center;
+  color: #180b0b;
+  text-shadow: none;
+}
+body #root .App .auth-wrapper .auth-container h3 {
+  margin: 0;
+  color: #180b0b;
+  text-shadow: none;
 }
 body #root .App .auth-wrapper .auth-container form {
   margin-bottom: 1.5rem;
