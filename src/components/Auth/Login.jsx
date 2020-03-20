@@ -4,8 +4,6 @@ import APIURL from '../../helpers/environments';
 
 export default function Login(props) {
 
-    console.log(APIURL);
-
     // Inputs
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
