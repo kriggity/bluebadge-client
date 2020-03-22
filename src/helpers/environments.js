@@ -7,4 +7,6 @@ switch (window.location.hostname) {
     case 'cmk-bluebadge-client.herokuapp.com/':
         APIURL = 'https://cmk-bluebadge-server.herokuapp.com/'
 }
+console.log(`window.location.hostname ${window.location.hostname }`);
+console.log(`APIURL${APIURL}`);
 export default APIURL;
