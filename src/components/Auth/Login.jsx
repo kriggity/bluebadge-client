@@ -40,28 +40,27 @@ export default function Login(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(`APIURL: ${APIURL}`);
 
-        // fetch(`${APIURL}/user/signin`, {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         user: {
-        //             email: email,
-        //             password: password
-        //         }
-        //     }),
-        //     headers: new Headers({
-        //         'Content-Type': 'application/json'
-        //     })
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         // console.log('props', props);
-        //         // console.log('data', data);
-        //         localStorage.setItem('userid', data.user.id);
-        //         return props.updateToken(data.sessionToken);
-        //     })
-        //     .catch(error => console.log('error', error));
+        fetch(`${APIURL}/user/signin`, {
+            method: 'POST',
+            body: JSON.stringify({
+                user: {
+                    email: email,
+                    password: password
+                }
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                // console.log('props', props);
+                // console.log('data', data);
+                localStorage.setItem('userid', data.user.id);
+                return props.updateToken(data.sessionToken);
+            })
+            .catch(error => console.log('error', error));
 
     }
     return (
