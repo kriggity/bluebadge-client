@@ -219,7 +219,7 @@ export default function GameProfile(props) {
                     </Col>
                 </Row> */}
                 <Row>
-                    <Col md={{ size: 6, offset: 3 }}>
+                    <Col sm={{ size: 10, offset: 1 }} md={{ size: 8, offset: 2 }} lg={{ size: 6, offset: 3 }}>
                         {renderGame()}
                     </Col>
                 </Row>

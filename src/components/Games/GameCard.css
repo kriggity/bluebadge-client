@@ -39,12 +39,10 @@
 .card .card-body .card-title p {
   margin-bottom: 2.25rem;
 }
-.card .card-body a {
-  position: absolute;
-  bottom: 0.75rem;
-}
 @media screen and (min-width: 576px) {
   .card .card-body a {
+    position: absolute;
+    bottom: 0.75rem;
     bottom: 1.5rem;
   }
 }

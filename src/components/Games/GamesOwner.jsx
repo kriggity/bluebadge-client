@@ -28,7 +28,7 @@ export default function GamesOwner(props) {
                         <h3>
                             No Games. {props.isOwner ? 'Go get some.' : 'Tell your friend to go get some.'}
                         </h3>
-                        <small>Empty Shelf Visual?</small>
+                        {/* <small>Empty Shelf Visual?</small> */}
                     </Col>
                 </>
             );

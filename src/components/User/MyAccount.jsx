@@ -30,30 +30,32 @@ export default function MyAccount(props) {
     const handleSubmit = e => {
         e.preventDefault();
 
-        console.log(fullName, email, password);
-        // let myHeaders = new Headers();
-        // myHeaders.append("Content-Type", "application/json");
+        console.log(fullName, email);
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", props.token);
 
-        // let raw = JSON.stringify({
-        //     "user":
-        //     {
-        //         "fullname": fullName,
-        //         "email": email,
-        //         "password": password
-        //     }
-        // });
+        let raw = JSON.stringify({
+            "user":
+            {
+                "fullname": fullName,
+                "email": email
+                // ,
+                // "password": password
+            }
+        });
 
-        // let requestOptions = {
-        //     method: 'POST',
-        //     headers: myHeaders,
-        //     body: raw,
-        //     redirect: 'follow'
-        // };
+        let requestOptions = {
+            method: 'PUT',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
 
-        // fetch(`${APIURL}/user/createuser`, requestOptions)
-        //     .then(response => response.text())
-        //     .then(result => console.log(result))
-        //     .catch(error => console.log('error', error));
+        fetch(`${APIURL}/user/${props.ownerid}`, requestOptions)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     }
 
 
@@ -85,7 +87,7 @@ export default function MyAccount(props) {
                                 onChange={e => setEmail(e.target.value)}
                             />
                         </FormGroup>
-                        <FormGroup>
+                        {/* <FormGroup>
                             <Label htmlFor="password">Password</Label>
                             <Input
                                 name="password"
@@ -93,7 +95,7 @@ export default function MyAccount(props) {
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             />
-                        </FormGroup>
+                        </FormGroup> */}
                         <Button type="Submit">Update</Button>
                     </Form>
                 </Col>
