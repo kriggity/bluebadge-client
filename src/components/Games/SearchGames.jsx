@@ -15,7 +15,7 @@ export default function SearchAPIGames(props) {
 
         let tempStr = encodeURI(searchStr);
         let searchLimit = 0;
-        let fetchURL = `https://www.boardgameatlas.com/api/search?name=${tempStr}&client_id=${BGA_CLIENT_ID}&fuzzy_match=true`;
+        let fetchURL = `https://api.boardgameatlas.com/api/search?name=${tempStr}&client_id=${BGA_CLIENT_ID}&fuzzy_match=true`;
 
         if (searchLimit > 0) {
             fetchURL = fetchURL + `&limit=${searchLimit}`;

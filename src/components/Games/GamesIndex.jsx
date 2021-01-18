@@ -115,7 +115,7 @@ export default function GamesIndex(props) {
     const [gameDetails, setGameDetails] = useState([]);
 
     const fetchOneGame = id => {
-        fetch(`https://www.boardgameatlas.com/api/search?limit=1&client_id=${BGA_CLIENT_ID}&ids=${id}`, {
+        fetch(`https://api.boardgameatlas.com/api/search?limit=1&client_id=${BGA_CLIENT_ID}&ids=${id}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ export default function Home(props) {
     const [popGames, setPopGames] = useState([]);
 
     const fetchPopGames = () => {
-        fetch(`https://www.boardgameatlas.com/api/search?client_id=${BGA_CLIENT_ID}&limit=12&order_by=popularity`, {
+        fetch(`https://api.boardgameatlas.com/api/search?client_id=${BGA_CLIENT_ID}&limit=12&order_by=popularity`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json'
