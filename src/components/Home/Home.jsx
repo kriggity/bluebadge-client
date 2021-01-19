@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, Alert } from 'reactstrap';
 import "./Home.css";
 import BGA_CLIENT_ID from '../../helpers/bga_client_id';
 import GameCard from '../Games/GameCard';
@@ -39,8 +39,10 @@ export default function Home(props) {
         } else {
             return (
                 <>
-                    <Col>
-                        <p>Apparently there are no popular games out right now.</p>
+                    <Col xs="12" className="text-center">
+                        <Alert color="light">
+                            Apparently there are no popular games out right now.
+                        </Alert>
                     </Col>
                 </>
             );
@@ -51,7 +53,7 @@ export default function Home(props) {
         <Container className="home">
             <Row>
                 <Col className="text-center hero">
-                    <p>My Game Library is a virtual library of your real life games.</p>
+                    <p>My Game Library is a catalog of your tabletop games.</p>
                     <Link to="/user/mygames">View My Games</Link>
                     <Link to="/game/search">Search for Games</Link>
                 </Col>
